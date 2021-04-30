@@ -1,20 +1,31 @@
 import Link from 'next/link';
 import renderHTML from 'react-render-html';
+import Image from 'next/image'
 import moment from 'moment';
 import { API } from '../../config';
 
+
+
 const SmallCard = ({ blog }) => {
+    const myLoader=({src})=>{
+        return (`${API}/blog/photo/${blog.slug}`)
+        }
     return (
         
         <div className="card">
             <section>
                 <Link href={`/blogs/${blog.slug}`}>
                     <a>
-                        <img
+                        <Image
+                            loader={myLoader}
                             className="card-img-top"
-                            style={{ maxHeight: '250px', width: '100%' }}
+                            height={400}
+                            width={500}
                             src={`${API}/blog/photo/${blog.slug}`}
                             alt={blog.title}
+                            layout="responsive"
+                            objectFit="cover"
+                            quality={30}
                         />
                     </a>
                 </Link>

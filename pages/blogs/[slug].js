@@ -1,18 +1,19 @@
+import fetch from 'isomorphic-fetch';
 import Head from 'next/head';
 import Image from 'next/image'
 import CookieConsent from "react-cookie-consent";
 import Link from 'next/link';
 import LayoutBlog from '../../components/Layoutblog';
-import React,{ useState, useEffect } from 'react';
-import { singleBlog, listRelated } from '../../actions/blog';
+import React, { useState, useEffect } from 'react';
+import { singleBlog, listRelated,list } from '../../actions/blog';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard'
 import DisqusThread from '../../components/DisqusThread';
 
-const SingleBlog = ({ blog, query }) => {
-    
+const SingleBlog = ({ blog}) => {
+
     const [related, setRelated] = useState([]);
 
     const loadRelated = () => {
@@ -34,11 +35,11 @@ const SingleBlog = ({ blog, query }) => {
                 {blog.title} | {APP_NAME}
             </title>
             <meta name="description" content={blog.mdesc} />
-            <link rel="canonical" href={`${DOMAIN}/blogs/${query.slug}`} />
+            <link rel="canonical" href={`${DOMAIN}/blogs/${blog.slug}`} />
             <meta property="og:title" content={`${blog.title}| ${APP_NAME}`} />
             <meta property="og:description" content={blog.mdesc} />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={`${DOMAIN}/blogs/${query.slug}`} />
+            <meta property="og:url" content={`${DOMAIN}/blogs/${blog.slug}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />
 
             <meta property="og:image" content={`${API}/blog/photo/${blog.slug}`} />
@@ -62,26 +63,28 @@ const SingleBlog = ({ blog, query }) => {
             </Link>
         ));
 
-        const showRelatedBlog = () => {
-            return related.map((blog, i) => (
-                <div className="col-md-4" key={i}>
-                    <article>
-                        <SmallCard blog={blog} />
-                    </article>
-                </div>
-            ));
-        };
-   
-        const showComments = () => {
-            return (
-                <div>
-                    <DisqusThread id={blog.id} title={blog.title} path={`/blog/${blog.slug}`} />
-                </div>
-            );
-        };
+    const showRelatedBlog = () => {
+        return related.map((blog, i) => (
+            <div className="col-md-4" key={i}>
+                <article>
+                    <SmallCard blog={blog} />
+                </article>
+            </div>
+        ));
+    };
 
-      
-        
+    const showComments = () => {
+        return (
+            <div>
+                <DisqusThread id={blog.id} title={blog.title} path={`/blog/${blog.slug}`} />
+            </div>
+        );
+    };
+
+    const myLoader=({src,width,quality})=>{
+        return (`${API}/blog/photo/${blog.slug}`)
+        }
+
     return (
         <React.Fragment>
             {head()}
@@ -91,10 +94,15 @@ const SingleBlog = ({ blog, query }) => {
                         <div className="container-fluid ">
                             <section>
                                 <div className="col-md-12" style={{ marginTop: '0px' }}>
-                                    <img
+                                    <Image
+                                        loader={myLoader}
                                         src={`${API}/blog/photo/${blog.slug}`}
                                         alt={blog.title}
-                                        className="img img-fluid featured-image"
+                                        height={500}
+                                        width={600}
+                                        layout="responsive"
+                                        quality={10}
+                                        
                                     />
                                 </div>
                             </section>
@@ -122,21 +130,21 @@ const SingleBlog = ({ blog, query }) => {
                             </section>
                         </div>
                         <CookieConsent
-                        debug={true}
-  location="bottom"
-  enableDeclineButton
-  onDecline={() => {
-    alert("nay!");
-  }}
-  buttonText="Sure!!"
-  cookieName="myAwesomeCookieName2"
-  style={{ background: "#2B373B" }}
-  buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-  expires={150}
->
-We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content and targeted ads, to analyze our website traffic, and to understand where our visitors are coming from.{" "}
-  
-</CookieConsent>
+                            debug={true}
+                            location="bottom"
+                            enableDeclineButton
+                            onDecline={() => {
+                                alert("nay!");
+                            }}
+                            buttonText="Sure!!"
+                            cookieName="myAwesomeCookieName2"
+                            style={{ background: "#2B373B" }}
+                            buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+                            expires={150}
+                        >
+                            We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content and targeted ads, to analyze our website traffic, and to understand where our visitors are coming from.{" "}
+
+                        </CookieConsent>
                         <div className="container">
                             <h4 className="text-center pt-5 pb-5 h2">Related blogs</h4>
                             {/* {JSON.stringify(related)} */}
@@ -151,15 +159,36 @@ We use cookies and other tracking technologies to improve your browsing experien
     );
 };
 
-SingleBlog.getInitialProps = ({ query }) => {
-    return singleBlog(query.slug).then(data => {
-        if (data.error) {
-            console.log(data.error);
-        } else {
-            // console.log('GET INITIAL PROPS IN SINGLE BLOG', data);
-            return { blog: data, query };
-        }
-    });
-};
+// SingleBlog.getInitialProps = ({ query }) => {
+//     return singleBlog(query.slug).then(data => {
+//         if (data.error) {
+//             console.log(data.error);
+//         } else {
+//             // console.log('GET INITIAL PROPS IN SINGLE BLOG', data);
+//             return { blog: data, query };
+//         }
+//     });
+// };
+
+export async function getStaticProps({params}) {
+    const blog = await singleBlog(params.slug)
+    return {
+      props: {
+        
+        blog, 
+     
+      },
+    }
+  }
+  
+  export async function getStaticPaths() {
+    const allblog = (await list()) || []
+    return {
+      paths: allblog.map((blog)=>`/blogs/${blog.slug}`),
+      fallback: false,
+    }
+  }
+
+
 
 export default SingleBlog;
