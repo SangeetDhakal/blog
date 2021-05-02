@@ -101,7 +101,7 @@ const SingleBlog = ({ blog}) => {
                                         height={500}
                                         width={600}
                                         layout="responsive"
-                                        quality={40}
+                                        quality={50}
                                         
                                     />
                                 </div>
