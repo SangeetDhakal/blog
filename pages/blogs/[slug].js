@@ -172,20 +172,16 @@ const SingleBlog = ({ blog}) => {
 
 export async function getStaticProps({params}) {
     const blog = await singleBlog(params.slug)
-    return {
-      props: {
-        
-        blog, 
-     
-      },
+    return {props: {blog, revalidate:20}
     }
   }
   
   export async function getStaticPaths() {
     const allblog = (await list()) || []
     return {
-      paths: allblog.map((blog)=>`/blogs/${blog.slug}`),
-      fallback: false,
+    //   paths: allblog.map((blog)=>`/blogs/${blog.slug}`),
+    paths:[{params:{slug:'oh-looks-like-it-works'}}],
+      fallback: 'blocking',
     }
   }
 

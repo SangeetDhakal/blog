@@ -91,15 +91,22 @@ const Header = () => {
               </NavItem>
               <NavItem>
 
-                <Link href="/signup">
-                  <NavLink href="/signup">About Us</NavLink>
+                <Link href="/about-us">
+                  <NavLink href="/about-us">About Us</NavLink>
                 </Link>
 
               </NavItem>
               <NavItem>
 
-                <Link href="/signin">
-                  <NavLink href="/signin">Privacy Policy</NavLink>
+                <Link href="/privacy-policy">
+                  <NavLink href="/privacy-policy">Privacy Policy</NavLink>
+                </Link>
+
+              </NavItem>
+              <NavItem>
+
+                <Link href="/terms">
+                  <NavLink href="/terms">Terms</NavLink>
                 </Link>
 
               </NavItem>
