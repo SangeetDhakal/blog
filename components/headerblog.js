@@ -33,7 +33,7 @@ const Header = () => {
     <React.Fragment>
       <Navbar color="light" light expand="md">
         <Link href="/">
-          <NavbarBrand href="/">SEOBLOG</NavbarBrand>
+          <NavbarBrand href="/">WIKI STACKS</NavbarBrand>
         </Link>
 
         <NavbarToggler onClick={toggle} />

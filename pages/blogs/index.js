@@ -11,18 +11,18 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
 
     const head = () => (
         <head>
-            <title>Programming blogs | {APP_NAME} </title>
+            <title>WIKI STACKS | {APP_NAME} </title>
             <meta
                 name="description"
-                content="Programming blogs and tutorials on react node next vue php laravel and web developoment"
+                content="Wiki of upcoming celebrities along with News and Entertainment."
             />
             <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
-            <meta property="og:title" content={`Latest web developoment tutorials | ${APP_NAME}`} />
+            <meta property="og:title" content={`Wiki of upcoming celebrities along with News and Entertainment. | ${APP_NAME}`} />
             <meta
                 property="og:description"
-                content="Programming blogs and tutorials on react node next vue php laravel and web developoment"
+                content="Wiki of upcoming celebrities along with News and Entertainment."
             />
-            <meta property="og:type" content="webiste" />
+            <meta property="og:type" content="website" />
             <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />
 
@@ -114,7 +114,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                         <header>
                             <div className="col-md-12 pt-3">
                                 <h1 className="display-4 font-weight-bold">
-                                    Programming Blogs
+                                    WIKI STACKS
                                 </h1>
                             </div>
                             <section>

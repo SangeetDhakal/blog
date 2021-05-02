@@ -81,9 +81,9 @@ const SingleBlog = ({ blog}) => {
         );
     };
 
-    const myLoader=({src,width,quality})=>{
-        return (`${API}/blog/photo/${blog.slug}`)
-        }
+    // const myLoader=({src,width,quality})=>{
+    //     return (`${API}/blog/photo/${blog.slug}`)
+    //     }
 
     return (
         <React.Fragment>
@@ -95,7 +95,7 @@ const SingleBlog = ({ blog}) => {
                             <section>
                                 <div className="col-md-12" style={{ marginTop: '0px' }}>
                                     <Image
-                                        loader={myLoader}
+                                        // loader={myLoader}
                                         src={`${API}/blog/photo/${blog.slug}`}
                                         alt={blog.title}
                                         height={500}
@@ -130,7 +130,7 @@ const SingleBlog = ({ blog}) => {
                             </section>
                         </div>
                         <CookieConsent
-                            debug={true}
+                            
                             location="bottom"
                             enableDeclineButton
                             onDecline={() => {
@@ -182,7 +182,7 @@ export async function getStaticProps({params}) {
     //   paths: allblog.map((blog)=>`/blogs/${blog.slug}`),
     paths:[],
     // paths:[{params:{slug:'oh-looks-like-it-works'}}],
-      fallback: 'blocking',
+      fallback: true,
     }
   }
 
