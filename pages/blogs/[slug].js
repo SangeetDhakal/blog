@@ -102,6 +102,7 @@ const SingleBlog = ({ blog}) => {
                                         width={600}
                                         layout="responsive"
                                         quality={50}
+                                        loading={'eager'}
                                         
                                     />
                                 </div>
