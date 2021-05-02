@@ -1,6 +1,6 @@
 import Layout from '../../../components/Layout';
 import Private from '../../../components/auth/Private';
-import BlogRead from '../../../components/crud/BlogRead';
+import BlogReadUser from '../../../components/crud/BlogReadUser';
 import Link from 'next/link';
 import { isAuth } from '../../../actions/auth';
 
@@ -15,7 +15,7 @@ const Blog = () => {
                             <h2>Manage blogs</h2>
                         </div>
                         <div className="col-md-12">
-                            <BlogRead username={username} />
+                            <BlogReadUser username={username} />
                         </div>
                     </div>
                 </div>
