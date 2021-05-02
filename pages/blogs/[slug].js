@@ -180,7 +180,8 @@ export async function getStaticProps({params}) {
     const allblog = (await list()) || []
     return {
     //   paths: allblog.map((blog)=>`/blogs/${blog.slug}`),
-    paths:[{params:{slug:'oh-looks-like-it-works'}}],
+    paths:[],
+    // paths:[{params:{slug:'oh-looks-like-it-works'}}],
       fallback: 'blocking',
     }
   }
