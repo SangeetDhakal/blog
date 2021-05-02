@@ -13,7 +13,7 @@ class MyDocument extends Document {
           />
           
          
-         <link rel="stylesheet" href="static/css/styles.css" />
+         <link rel="stylesheet" href="public/static/css/styles.css" />
         </Head>
         <body>
           <Main />
