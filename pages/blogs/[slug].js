@@ -81,9 +81,9 @@ const SingleBlog = ({ blog}) => {
         );
     };
 
-    const myLoader=({src,width,quality})=>{
-        return (`${API}/blog/photo/${blog.slug}`)
-        }
+    // const myLoader=({src,width,quality})=>{
+    //     return (`${API}/blog/photo/${blog.slug}`)
+    //     }
 
     return (
         <React.Fragment>
@@ -95,13 +95,13 @@ const SingleBlog = ({ blog}) => {
                             <section>
                                 <div className="col-md-12" style={{ marginTop: '0px' }}>
                                     <Image
-                                        loader={myLoader}
+                                        // loader={myLoader}
                                         src={`${API}/blog/photo/${blog.slug}`}
                                         alt={blog.title}
                                         height={500}
                                         width={600}
                                         layout="responsive"
-                                        quality={10}
+                                        quality={40}
                                         
                                     />
                                 </div>

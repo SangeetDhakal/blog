@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import Image from 'next/image'
 
 
 const about=()=>{
@@ -20,10 +21,11 @@ const about=()=>{
             
             
             </div>
-            <div className="col-md-4"><img
-                                        src="static/images/detective.png"
+            <div className="col-md-4"><Image
+                                        src="https://res.cloudinary.com/wikistacks/image/upload/v1619968390/detective_rsyedi.webp"
+                                        width={400}
+                                        height={400}
                                         
-                                        className="img img-fluid featured-image"
                                     /></div>
 </div>
                 

@@ -3,9 +3,109 @@ import Link from 'next/link'
 const Index = () => {
 
     return <Layout>
-        <h2>Wiki, News & Entertainment related to your favourite celebs!!!</h2>
+        
+       
+            <article className="overflow-hidden">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <h4 className="display-4 font-weight-bold">
+                            Wiki Stacks
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 text-center pt-4 pb-5">
+                            <p className="lead">
+                            Wiki, News & Entertainment related to your favourite celebs!!!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-4">
+                            <div className="flip flip-horizontal">
+                                <div
+                                    className="front"
+                                    style={{
+                                        backgroundImage:
+                                            'url(' +
+                                            'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' +
+                                            ')'
+                                    }}
+                                >
+                                    <h2 className="text-shadow text-center h1">Wiki</h2>
+                                </div>
+                                <div className="back text-center">
+                                    <Link href="/categories/react">
+                                        <a>
+                                            <h3 className="h1">Wiki</h3>
+                                        </a>
+                                    </Link>
+                                    <p className="lead">Find out about your favourite celebrities</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-md-4">
+                            <div className="flip flip-horizontal">
+                                <div
+                                    className="front"
+                                    style={{
+                                        backgroundImage:
+                                            'url(' +
+                                            'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' +
+                                            ')'
+                                    }}
+                                >
+                                    <h2 className="text-shadow text-center h1">NEWS</h2>
+                                </div>
+                                <div className="back text-center">
+                                    <Link href="/categories/node">
+                                        <a>
+                                            <h3 className="h1">NEWS</h3>
+                                        </a>
+                                    </Link>
+                                    <p className="lead">
+                                        All the latest news of your favourite celebrities
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-md-4">
+                            <div className="flip flip-horizontal">
+                                <div
+                                    className="front"
+                                    style={{
+                                        backgroundImage:
+                                            'url(' +
+                                            'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' +
+                                            ')'
+                                    }}
+                                >
+                                    <h2 className="text-shadow text-center h1">Entertainment</h2>
+                                </div>
+                                <div className="back text-center">
+                                    <Link href="/categories/nextjs">
+                                        <a>
+                                            <h3 className="h1">Entertainment</h3>
+                                        </a>
+                                    </Link>
+                                    <p className="lead">All the gossips for your entertainment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </Layout>
         
 
-    </Layout>//anything in between layout will be passed as children
+   //anything in between layout will be passed as children
 };
 export default Index;
