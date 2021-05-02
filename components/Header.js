@@ -38,7 +38,11 @@ const Header = () => {
     <React.Fragment>
       <Navbar color="light" light expand="md">
         <Link href="/">
-          <NavbarBrand href="/">{APP_NAME}</NavbarBrand>
+          <NavbarBrand href="/">
+    <div class="sign">
+      <span class="fast-flicker">W</span>iki Sta<span class="flicker">c</span>ks
+    </div>
+  </NavbarBrand>
         </Link>
 
         <NavbarToggler onClick={toggle} />

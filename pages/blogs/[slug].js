@@ -93,16 +93,17 @@ const SingleBlog = ({ blog}) => {
                     <article>
                         <div className="container-fluid ">
                             <section>
-                                <div className="col-md-12" style={{ marginTop: '0px' }}>
+                                <div className="col-md-11 mx-auto" style={{ marginTop: '0px' }}>
                                     <Image
                                         // loader={myLoader}
                                         src={`${API}/blog/photo/${blog.slug}`}
                                         alt={blog.title}
-                                        height={500}
-                                        width={600}
+                                        priority={true}
+                                        height={300}
+                                        width={400}
                                         layout="responsive"
                                         quality={50}
-                                        loading={'eager'}
+                                        
                                         
                                     />
                                 </div>
