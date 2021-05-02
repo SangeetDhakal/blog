@@ -21,7 +21,7 @@ const about=()=>{
             
             </div>
             <div className="col-md-4"><img
-                                        src="static/images/detective.png"
+                                        src="public/static/images/detective.png"
                                         
                                         className="img img-fluid featured-image"
                                     /></div>
