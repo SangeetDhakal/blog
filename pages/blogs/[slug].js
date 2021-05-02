@@ -172,8 +172,8 @@ const SingleBlog = ({ blog}) => {
 
 export async function getStaticProps({params}) {
     const blog = await singleBlog(params.slug)
-    return {props: {blog, revalidate:20}
-    }
+    return {props: {blog},revalidate:20
+    } 
   }
   
   export async function getStaticPaths() {
@@ -182,7 +182,7 @@ export async function getStaticProps({params}) {
     //   paths: allblog.map((blog)=>`/blogs/${blog.slug}`),
     paths:[],
     // paths:[{params:{slug:'oh-looks-like-it-works'}}],
-      fallback: true,
+      fallback: "loading",
     }
   }
 
