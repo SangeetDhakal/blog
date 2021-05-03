@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { API } from '../config';
 import queryString from 'query-string';
-import { isAuth , handleResponse} from './auth';
+import { isAuth, handleResponse } from './auth';
 
 export const createBlog = (blog, token) => {
     let createBlogEndpoint;
@@ -97,7 +97,7 @@ export const listRelated = blog => {
         })
         .catch(err => console.log(err));
 };
- 
+
 export const list = username => {
     let listBlogsEndpoint;
 
@@ -108,6 +108,18 @@ export const list = username => {
     }
 
     return fetch(`${listBlogsEndpoint}`, {
+        method: 'GET'
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const sitemaps = () => {
+    let listSitemapsEndpoint;
+    listSitemapsEndpoint = `${API}/sitemaps`;
+    return fetch(`${listSitemapsEndpoint}`, {
         method: 'GET'
     })
         .then(response => {
