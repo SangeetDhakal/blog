@@ -1,6 +1,7 @@
+import { API} from '../../config';
 const Sitemap = () => {};
 const toUrl = (route) =>
-  `<url><loc>http://localhost:3000/blogs/${route.slug}</loc><lastmod>${route.updatedAt}</lastmod><priority>1.0</priority></url>`;
+  `<url><loc>https://wikistacks.com/blogs/${route.slug}</loc><lastmod>${route.updatedAt}</lastmod><priority>1.0</priority></url>`;
   
 const createSitemap = (urlList) => 
   `<?xml version="1.0" encoding="UTF-8"?>
@@ -9,7 +10,7 @@ const createSitemap = (urlList) =>
     </urlset>`;
 	
 export async function getServerSideProps({ res, req }) {      
-	const siteMapJson = await fetch(`http://localhost:8000/api/sitemaps`);
+	const siteMapJson = await fetch(`https://wikistacks/api/sitemaps`);
 	const urlList = await siteMapJson.json();
 	const sitemap = createSitemap(urlList);
 	res.setHeader("Content-Type", "text/xml");
