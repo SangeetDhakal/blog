@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+
 import Head from 'next/head';
 import Image from 'next/image'
 import CookieConsent from "react-cookie-consent";

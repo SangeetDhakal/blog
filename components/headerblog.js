@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import style from '../public/Static/css/header.module.css'
 
 import Link from 'next/link'
 
@@ -33,7 +33,7 @@ const Header = () => {
     <React.Fragment>
       <Navbar color="light" light expand="md">
         <Link href="/">
-          <NavbarBrand href="/">WIKI STACKS</NavbarBrand>
+          <NavbarBrand href="/"><span class={style.fastflicker}>W</span>iki Stacks</NavbarBrand>
         </Link>
 
         <NavbarToggler onClick={toggle} />

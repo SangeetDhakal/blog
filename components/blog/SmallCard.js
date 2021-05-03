@@ -3,6 +3,7 @@ import renderHTML from 'react-render-html';
 import Image from 'next/image'
 import moment from 'moment';
 import { API } from '../../config';
+import style from '../../public/Static/css/styles.module.css'
 
 
 
@@ -12,7 +13,7 @@ const SmallCard = ({ blog }) => {
         }
     return (
         
-        <div className="card">
+        <div className={style.card}>
             <section>
                 <Link href={`/blogs/${blog.slug}`}>
                     <a>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import style from '../public/Static/css/header.module.css'
 import { APP_NAME } from '../config'
 import Router from 'next/router'
 import Link from 'next/link'
@@ -39,9 +40,9 @@ const Header = () => {
       <Navbar color="light" light expand="md">
         <Link href="/">
           <NavbarBrand href="/">
-    <div class="sign">
-      <span class="fast-flicker">W</span>iki Sta<span class="flicker">c</span>ks
-    </div>
+    {/* <div class="sign"> */}
+      <span class={style.fastflicker}>W</span>iki Stacks
+    {/* </div> */}
   </NavbarBrand>
         </Link>
 

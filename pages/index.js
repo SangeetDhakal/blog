@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import style from '../public/Static/css/index.module.css'
 
 
 import Link from 'next/link'
@@ -12,15 +13,15 @@ const Index = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 text-center">
-                        <div id="container">
+                        <div id={style.container}>
   
-  <div id="flip">
+  <div id={style.flip}>
     <div><div>Wiki</div></div>
     <div><div>News</div></div>
     <div><div>Entertainment</div></div>
     
   </div>
-  Stacks !!
+  Stacks
 </div>
 
 
