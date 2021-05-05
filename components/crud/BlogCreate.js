@@ -188,7 +188,7 @@ const CreateBlog = ({ router }) => {
                        
                         
                         value={body}
-                        placeholder="Write something amazing..."
+                        defaultValue="Write something amazing..."
                         
                         onChange={handleBody}
                     /> 
