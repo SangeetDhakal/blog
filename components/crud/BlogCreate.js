@@ -98,15 +98,15 @@ const CreateBlog = ({ router }) => {
         setValues({ ...values, [name]: value, formData, error: '' });
     };
 
-    const handleBody = e => {
+    // const handleBody = e => {
          
-        // console.log(e);
-        setBody(e);
-        formData.set('body', e);
-        if (typeof window !== 'undefined'){
-            localStorage.setItem('blog', JSON.stringify(e))
-        }
-    };
+    //     // console.log(e);
+    //     setBody(e);
+    //     formData.set('body', e);
+    //     if (typeof window !== 'undefined'){
+    //         localStorage.setItem('blog', JSON.stringify(e))
+    //     }
+    // };
 
     const handleToggle = c => () => {
         setValues({ ...values, error: '' });
@@ -192,7 +192,7 @@ const CreateBlog = ({ router }) => {
                         placeholder="Write something amazing..."
                         
                         
-                        onChange={handleBody}/> 
+                        /> 
                    
 
                 </div>
