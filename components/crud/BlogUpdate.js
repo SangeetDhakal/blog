@@ -7,17 +7,20 @@ import { getCookie, isAuth } from '../../actions/auth';
 import { getCategories } from '../../actions/category';
 import { getTags } from '../../actions/tag';
 import { singleBlog, updateBlog } from '../../actions/blog';
-
-
+import '../../node_modules/react-quill/dist/quill.snow.css';
+import { QuillModules, QuillFormats } from '../../helpers/quill';
 import { API } from '../../config';
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 const importJodit = () => import('jodit-react');
 
 const JoditEditor = dynamic(importJodit, {
     ssr: false,
 });
-    
+
 
 const BlogUpdate = ({ router }) => {
+    
     const [body, setBody] = useState('');
     
     const [categories, setCategories] = useState([]);
@@ -34,6 +37,7 @@ const BlogUpdate = ({ router }) => {
         body: '',
         mdesc:'',
         excerpt:'',
+        
     });
 
     
@@ -193,24 +197,48 @@ const BlogUpdate = ({ router }) => {
         setValues({ ...values, [name]: value, formData, error: '' });
     };
 
+    const blogFromLS = () => {
+        if (typeof window === 'undefined') {
+            return ("");
+        }
+
+        if (localStorage.getItem('blog')) {
+            return JSON.parse(localStorage.getItem('blog'));
+        } else {
+            return ("");
+        }
+    };
+
     const handleBody = e => {
+        
         setBody(e);
-        formData.set('body', e);
+        // formData.set('body', e);
+        
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('blog', JSON.stringify(e));
+            
+        }
     };
 
     const editBlog = e => {
         e.preventDefault();
+        formData.set('body', blogFromLS())
         updateBlog(formData, token, router.query.slug).then(data => {
             if (data.error) {
                 setValues({ ...values, error: data.error });
             } else {
                 setValues({ ...values, title: '', success: `Blog titled "${data.title}" is successfully updated` });
+                
                 if (isAuth() && isAuth().role === 1) {
                     // Router.replace(`/admin/crud/${router.query.slug}`);
                     Router.replace(`/admin`);
                 } else if (isAuth() && isAuth().role === 0) {
                     // Router.replace(`/user/crud/${router.query.slug}`);
                     Router.replace(`/user`);
+                }
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('blog', "");
+                    
                 }
             }
         });
@@ -238,10 +266,10 @@ const BlogUpdate = ({ router }) => {
 
                 <div className="form-group">
                     <JoditEditor
-                        
                         value={body}
-                        placeholder="Write something amazing..."
+                        
                         onChange={handleBody}
+                        // onSubmit={setBody}
                     />
                 </div>
                 <div className="form-group">
@@ -274,6 +302,7 @@ const BlogUpdate = ({ router }) => {
                     <div className="pt-3">
                         {showSuccess()}
                         {showError()}
+                        
                     </div>
 
                     

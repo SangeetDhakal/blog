@@ -47,7 +47,7 @@ const CreateBlog = ({ router }) => {
         hidePublishButton: false
     });
 
-    const { error, sizeError, success, formData, title, mdesc,excerpt, hidePublishButton } = values;
+    const { error, success, formData, title, mdesc,excerpt} = values;
     const token = getCookie('token');
 
     //Need to remove tags
