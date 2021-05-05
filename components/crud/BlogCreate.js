@@ -193,7 +193,7 @@ const CreateBlog = ({ router }) => {
                         
                         
                         onChange={handleBody}
-                        onBlur={newBody => setBody(newBody.target.innerHTML)}/> 
+                        /> 
                    
 
                 </div>
