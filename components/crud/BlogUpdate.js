@@ -7,14 +7,11 @@ import { getCookie, isAuth } from '../../actions/auth';
 import { getCategories } from '../../actions/category';
 import { getTags } from '../../actions/tag';
 import { singleBlog, updateBlog } from '../../actions/blog';
-
-
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+import '../../node_modules/react-quill/dist/quill.snow.css';
+import { QuillModules, QuillFormats } from '../../helpers/quill';
 import { API } from '../../config';
-const importJodit = () => import('jodit-react');
 
-const JoditEditor = dynamic(importJodit, {
-    ssr: false,
-});
     
 
 const BlogUpdate = ({ router }) => {
@@ -237,8 +234,9 @@ const BlogUpdate = ({ router }) => {
                 </div>
 
                 <div className="form-group">
-                    <JoditEditor
-                        
+                    <ReactQuill
+                        modules={QuillModules}
+                        formats={QuillFormats}
                         value={body}
                         placeholder="Write something amazing..."
                         onChange={handleBody}
