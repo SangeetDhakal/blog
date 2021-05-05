@@ -7,6 +7,7 @@ import { getCookie, isAuth } from '../../actions/auth';
 import { getCategories } from '../../actions/category';
 import { getTags } from '../../actions/tag';
 import { createBlog } from '../../actions/blog';
+import '../../node_modules/react-quill/dist/quill.snow.css';
 
 const importJodit = () => import('jodit-react');
 
@@ -24,7 +25,7 @@ const CreateBlog = ({ router }) => {
         if (localStorage.getItem('blog')) {
             return JSON.parse(localStorage.getItem('blog'));
         } else {
-            return false;
+            return ("");
         }
     };
 
@@ -102,9 +103,9 @@ const CreateBlog = ({ router }) => {
         // console.log(e);
         setBody(e);
         formData.set('body', e);
-        // if (typeof window !== 'undefined') {
-        //     localStorage.setItem('blog', JSON.stringify(e));
-        // }
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('blog', JSON.stringify(e));
+        }
     };
 
     const handleToggle = c => () => {
@@ -188,8 +189,7 @@ const CreateBlog = ({ router }) => {
                        
                         
                         value={body}
-                        defaultValue="Write something amazing..."
-                        
+                        placeholder="Write something amazing..."
                         onChange={handleBody}
                     /> 
                 </div>
