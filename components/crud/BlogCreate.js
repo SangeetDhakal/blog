@@ -99,11 +99,12 @@ const CreateBlog = ({ router }) => {
     };
 
     const handleBody = e => {
+         
         // console.log(e);
         setBody(e);
         formData.set('body', e);
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('blog', JSON.stringify(e));
+        if (typeof window !== 'undefined'){
+            localStorage.setItem('blog', JSON.stringify(e))
         }
     };
 
@@ -189,8 +190,11 @@ const CreateBlog = ({ router }) => {
                         
                         value={body}
                         placeholder="Write something amazing..."
-                        onChange={handleBody}
-                    /> 
+                        
+                        
+                        onChange={handleBody}/> 
+                   
+
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Meta Description</label>
