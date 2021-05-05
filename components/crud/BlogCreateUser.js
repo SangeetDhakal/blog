@@ -100,9 +100,9 @@ const CreateBlog = ({ router }) => {
         // console.log(e);
         setBody(e);
         formData.set('body', e);
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('blog', JSON.stringify(e));
-        }
+        // if (typeof window !== 'undefined') {
+        //     localStorage.setItem('blog', JSON.stringify(e));
+        // }
     };
 
     const handleToggle = c => () => {
