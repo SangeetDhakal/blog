@@ -175,7 +175,7 @@ const SingleBlog = ({ blog}) => {
 
 export async function getStaticProps({params}) {
     const blog = await singleBlog(params.slug)
-    return {props: {blog},revalidate:20,
+    return {props: {blog},revalidate:3600,
     } 
   }
   

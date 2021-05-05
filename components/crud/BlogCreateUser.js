@@ -7,9 +7,11 @@ import { getCookie, isAuth } from '../../actions/auth';
 import { getCategories } from '../../actions/category';
 import { getTags } from '../../actions/tag';
 import { createBlog } from '../../actions/blog';
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
-import '../../node_modules/react-quill/dist/quill.snow.css';
-import { QuillModules, QuillFormats } from '../../helpers/quill';
+const importJodit = () => import('jodit-react');
+
+const JoditEditor = dynamic(importJodit, {
+    ssr: false,
+});
 
 const CreateBlog = ({ router }) => {
     const blogFromLS = () => {
@@ -180,13 +182,13 @@ const CreateBlog = ({ router }) => {
                 </div>
 
                 <div className="form-group">
-                    <ReactQuill
-                        modules={QuillModules}
-                        formats={QuillFormats}
-                        value={body}
-                        placeholder="Write something amazing..."
-                        onChange={handleBody}
-                    />
+                <JoditEditor
+                       
+                        
+                       value={body}
+                       placeholder="Write something amazing..."
+                       onChange={handleBody}
+                   /> 
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Meta Description</label>
