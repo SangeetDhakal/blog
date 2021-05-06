@@ -1,0 +1,10 @@
+Sitemap: https://wikistacks.com/sitemap.xml
+
+User-agent: *
+Allow: /*
+Allow: /blogs/*
+
+
+Disallow: /api/*
+Disallow: /_next/*
+Disallow: /js
