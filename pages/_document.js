@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import React from 'react'
+
 import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 
@@ -21,9 +21,9 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-        <React.Fragment>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HB438XK175"></script>
             <script dangerouslySetInnerHTML={this.setGoogleTags()} />
-          </React.Fragment>
+      
           <meta name='application-name' content='PWA App' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta name='apple-mobile-web-app-status-bar-style' content='default' />
