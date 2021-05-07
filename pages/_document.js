@@ -18,6 +18,9 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+        <React.Fragment>
+            <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+          </React.Fragment>
           <meta name='application-name' content='PWA App' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta name='apple-mobile-web-app-status-bar-style' content='default' />
