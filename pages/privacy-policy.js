@@ -7,9 +7,9 @@ const about = () => {
         <Layout>
             <div className="container-fluid">
                 <h1 className="text-center pt-4 pb-4">Privacy Policy</h1></div>
-                <div className="row" >
-            <div className="col-md-2"></div>
-            <div className="col-md-8 pl-5" >
+                <div className="row ml-5 mr-5" >
+            
+            <div className="col-md-8 mx-auto" >
                
 
 <p>We take your privacy seriously. This policy outlines WIKI STACKSS’ information gathering, cookie policy, and privacy-related practices. It also discloses our practices and policies concerning privacy laws and regulations such as the California Consumer Privacy Act (CCPA) and the EU’s General Data Protection Regulation (GDPR).</p>

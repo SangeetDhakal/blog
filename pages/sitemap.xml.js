@@ -14,7 +14,7 @@ export async function getServerSideProps({ res, req }) {
 	const siteMapJson = await fetch(`http://localhost:8000/api/sitemaps`);
 	const urlList = await siteMapJson.json();
 	const sitemap = createSitemap(urlList);
-	res.setHeader("Content-Type", "application/xml");
+	res.setHeader("content-Type", "application/xml");
 	res.write(sitemap);
 	res.end();
 	return { props: { results : {urlList}}}

@@ -7,9 +7,9 @@ const about = () => {
         <Layout>
             <div className="container-fluid">
                 <h1 className="text-center pt-4 pb-4">Terms of Use</h1></div>
-                <div className="row" >
-            <div className="col-md-2"></div>
-            <div className="col-md-8 pl-5" >
+                <div className="row ml-5 mr-5" >
+            
+            <div className="col-md-8 mx-auto" >
                 <p>
             WIKI STACKS requires all visitors to its platform to review and comply with these Terms of Use. By viewing, downloading, or accessing the platform, you demonstrate your acceptance to these terms. If you do not wish to comply with or accept the following terms, please do not visit or use information obtained from our platform.</p>
 <li>	Wiki Stacks may contain links to third-party websites, advertisers, services, or offers which are not maintained or controlled by Wiki Stacks. Wiki Stacks does not endorse or assume any responsibility for the third parties website, products or services. Furthermore, Wiki Stacks is not responsible for the content of these websites or the manner in which information may be collected on these websites and used by any third party. Your participation and relationship with any advertisers found on Wiki Stacks, are entirely between you and the respective advertiser. Wiki Stacks is not responsible for any loss or damage arising from your use or visit to a third party website that you found on Wiki Stacks.</li>

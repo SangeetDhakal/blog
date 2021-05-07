@@ -93,23 +93,7 @@ const SingleBlog = ({ blog}) => {
                 <main>
                     <article>
                         <div className="container-fluid ">
-                            <section>
-                                <div className="col-md-11 mx-auto" style={{ marginTop: '0px' }}>
-                                    <Image
-                                        // loader={myLoader}
-                                        src={`${API}/blog/photo/${blog.slug}`}
-                                        alt={blog.title}
-                                        priority={true}
-                                        height={300}
-                                        width={400}
-                                        layout="responsive"
-                                        quality={50}
-                                        
-                                        
-                                    />
-                                </div>
-                            </section>
-
+                            
                             <section>
                                 <div className="container">
                                     <h1 className="col-md-12 pb-3 pt-3">{blog.title}</h1>
@@ -132,6 +116,23 @@ const SingleBlog = ({ blog}) => {
                                 <div className="col-md-9 lead">{renderHTML(blog.body)}</div>
                             </section>
                         </div>
+                        <section>
+                                <div className="col-md-9 lead" style={{ marginTop: '0px' }}>
+                                    <Image
+                                        // loader={myLoader}
+                                        src={`${API}/blog/photo/${blog.slug}`}
+                                        alt={blog.title}
+                                        
+                                        height={300}
+                                        width={400}
+                                        layout="responsive"
+                                        quality={50}
+                                        
+                                        
+                                    />
+                                </div>
+                            </section>
+
                         <CookieConsent
                             
                             location="bottom"

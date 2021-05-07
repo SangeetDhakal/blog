@@ -16,7 +16,6 @@ const about=()=>{
             <p>If anyone wants to publish their own biography then feel free to contact us through our <a href="contact">contact us</a> page</p>
             <h3>Where are we located?</h3>
             <p>We are located at 413, Nursery Lane Marg, Bansbari, Kathmandu. Feel free to contact us through mail or postal service or any other means. We will try our best to get back to you.</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14124.854951708274!2d85.33464302083141!3d27.741552765795337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194f84acc8eb%3A0x6b7e62199aff3c79!2sBansbari%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1619927102929!5m2!1sen!2snp" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
             
             
             
