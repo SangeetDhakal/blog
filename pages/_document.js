@@ -20,7 +20,7 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
         
-          <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+       
          
           <meta name='application-name' content='PWA App' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
