@@ -1,6 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
+  setGoogleTags() {
+    if (publicRuntimeConfig.PRODUCTION) {
+      return {
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HB438XK175');
+        `
+      };
+    }
+  }
+  
   render() {
     return (
       <Html lang='en'>
@@ -24,7 +37,7 @@ class MyDocument extends Document {
 
           <link rel='icon' type='image/png' sizes='32x32' href='/Static/icons/favicon-32x32.png' />
           <link rel='icon' type='image/png' sizes='16x16' href='/Static/icons/favicon-16x16.png' />
-          <link rel='manifest' href='manifest.json' />
+          <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/Static/icons/safari-pinned-tab.svg' color='#5bbad5' />
           <link rel='shortcut icon' href='/favicon.ico' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
