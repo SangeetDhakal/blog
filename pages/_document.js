@@ -1,28 +1,30 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-
-import getConfig from 'next/config';
-const { publicRuntimeConfig } = getConfig();
+import { GA_TRACKING_ID } from '../pages/lib/gtag'
 
 class MyDocument extends Document {
-  setGoogleTags() {
-    if (publicRuntimeConfig.PRODUCTION) {
-      return {
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-HB438XK175');
-        `
-      };
-    }
-  }
-  
+    
   render() {
     return (
       <Html lang='en'>
         <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HB438XK175"></script>
-            <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
+        
       
           <meta name='application-name' content='PWA App' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
