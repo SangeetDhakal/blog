@@ -8,3 +8,6 @@ Allow: /blogs/*
 Disallow: /api/*
 Disallow: /_next/*
 Disallow: /js
+Disallow: /admin
+Disallow: /user
+Disallow: /signin

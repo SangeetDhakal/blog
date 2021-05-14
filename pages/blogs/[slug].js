@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-
+import { BlogJsonLd } from 'next-seo';
 import Head from 'next/head';
 import Image from 'next/image'
 import CookieConsent from "react-cookie-consent";
@@ -47,6 +47,16 @@ const SingleBlog = ({ blog}) => {
             <meta property="og:image:secure_url" ccontent={`${API}/blog/photo/${blog.slug}`} />
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
+            <BlogJsonLd
+      url={`${DOMAIN}/blogs/${blog.slug}`}
+      title={blog.title}
+      images={[`${API}/blog/photo/${blog.slug}`]}
+      datePublished={blog.publishedAt}
+      dateModified={blog.updatedAt}
+      authorName={blog.postedBy.username}
+      description={blog.mdesc}
+    />
+
         </Head>
     );
 
