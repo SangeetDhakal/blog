@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { BlogJsonLd } from 'next-seo';
+import { BlogJsonLd, NextSeo } from 'next-seo';
 import Head from 'next/head';
 import Image from 'next/image'
 import CookieConsent from "react-cookie-consent";
@@ -47,18 +47,44 @@ const SingleBlog = ({ blog}) => {
             <meta property="og:image:secure_url" ccontent={`${API}/blog/photo/${blog.slug}`} />
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
-            <BlogJsonLd
-      url={`${DOMAIN}/blogs/${blog.slug}`}
-      title={blog.title}
-      images={[`${API}/blog/photo/${blog.slug}`]}
-      datePublished={blog.publishedAt}
-      dateModified={blog.updatedAt}
-      authorName={blog.postedBy.username}
-      description={blog.mdesc}
-    />
+            
+   
 
         </Head>
     );
+
+    const  makeJobSchema =()=> {
+        
+        return {
+            // schema truncated for brevity
+            '@context': 'http://schema.org',
+            '@type': 'Article',
+            "inLanguage":"en-US",
+
+            
+            dateUpdated: `${blog.updatedAt}`,
+            description: blog.mdesc,
+            headline: blog.title,
+            excerpt:blog.excerpt,
+            image:`${API}/blog/photo/${blog.slug}`,
+            slug:blog.slug,
+            author:blog.postedBy.username
+
+            
+        }
+    }
+
+    const JobSchema=blog=> {
+        return (
+            <script
+                
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(makeJobSchema(blog)) }}
+            />
+        )
+    }
+
+
 
     const showBlogCategories = blog =>
         blog.categories.map((c, i) => (
@@ -99,6 +125,7 @@ const SingleBlog = ({ blog}) => {
     return (
         <React.Fragment>
             {head()}
+            {JobSchema()}
             <LayoutBlog>
                 <main>
                     <article>
