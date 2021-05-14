@@ -48,6 +48,7 @@ const SingleBlog = ({ blog}) => {
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
             <meta name="twitter:card" content="summary" />
+           
             
    
 
