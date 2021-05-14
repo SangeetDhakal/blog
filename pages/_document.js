@@ -56,12 +56,7 @@ class MyDocument extends Document {
           <meta name='twitter:description' content='Wiki, News & Entertainment related to your favourite celebs!!!' />
           <meta name='twitter:image' content='https://wikistacks.com/Static/icons/android-chrome-192x192.png' />
           <meta name='twitter:creator' content='@DavidWShadow' />
-          <meta property='og:type' content='website' />
-          <meta property='og:title' content='Wiki Stacks' />
-          <meta property='og:description' content='Wiki, News & Entertainment related to your favourite celebs!!!' />
-          <meta property='og:site_name' content='Wiki Stacks' />
-          <meta property='og:url' content='https://wikistacks.com' />
-          <meta property='og:image' content='https://wikistacks.com/Static/icons/apple-touch-icon.png' />
+          
           <meta charSet="UTF-8" />
           <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
 
