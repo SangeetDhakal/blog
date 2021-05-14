@@ -48,7 +48,12 @@ const SingleBlog = ({ blog}) => {
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
             <meta name="twitter:card" content="summary" />
-           
+         
+          <meta name='twitter:url' content={`${DOMAIN}/blogs/${blog.slug}`}  />
+          <meta name='twitter:title' content={`${blog.title}| ${APP_NAME}`}  />
+          <meta name='twitter:description' content={blog.mdesc} />
+          <meta name='twitter:image' content={`${API}/blog/photo/${blog.slug}`} />
+       
             
    
 
