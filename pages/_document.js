@@ -26,11 +26,11 @@ class MyDocument extends Document {
           />
         
       
-          <meta name='application-name' content='PWA App' />
+          <meta name='application-name' content='Wiki Stacks' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta name='apple-mobile-web-app-status-bar-style' content='default' />
           <meta name='apple-mobile-web-app-title' content='PWA App' />
-          <meta name='description' content='Best PWA App in the world' />
+          <meta name='description' content='Wiki, News & Entertainment related to your favourite celebs!!!' />
           <meta name='format-detection' content='telephone=no' />
           <meta name='mobile-web-app-capable' content='yes' />
           <meta name='msapplication-config' content='/Static/icons/browserconfig.xml' />
@@ -52,14 +52,14 @@ class MyDocument extends Document {
 
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:url' content='https://wikistacks.com' />
-          <meta name='twitter:title' content='PWA App' />
-          <meta name='twitter:description' content='Best PWA App in the world' />
+          <meta name='twitter:title' content='Wiki Stacks' />
+          <meta name='twitter:description' content='Wiki, News & Entertainment related to your favourite celebs!!!' />
           <meta name='twitter:image' content='https://wikistacks.com/Static/icons/android-chrome-192x192.png' />
           <meta name='twitter:creator' content='@DavidWShadow' />
           <meta property='og:type' content='website' />
-          <meta property='og:title' content='PWA App' />
-          <meta property='og:description' content='Best PWA App in the world' />
-          <meta property='og:site_name' content='PWA App' />
+          <meta property='og:title' content='Wiki Stacks' />
+          <meta property='og:description' content='Wiki, News & Entertainment related to your favourite celebs!!!' />
+          <meta property='og:site_name' content='Wiki Stacks' />
           <meta property='og:url' content='https://wikistacks.com' />
           <meta property='og:image' content='https://wikistacks.com/Static/icons/apple-touch-icon.png' />
           <meta charSet="UTF-8" />

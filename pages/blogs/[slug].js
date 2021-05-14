@@ -47,6 +47,7 @@ const SingleBlog = ({ blog}) => {
             <meta property="og:image:secure_url" ccontent={`${API}/blog/photo/${blog.slug}`} />
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
+            <meta name="twitter:card" content="summary" />
             
    
 
@@ -68,7 +69,14 @@ const SingleBlog = ({ blog}) => {
             excerpt:blog.excerpt,
             image:`${API}/blog/photo/${blog.slug}`,
             slug:blog.slug,
-            author:blog.postedBy.username
+            author:{
+                "@type":"Person",
+                "name":blog.postedBy.username},
+            publisher:{
+                "@type":"Person",
+                "name":"Gita Timilsina",
+            }
+            
 
             
         }
@@ -191,7 +199,7 @@ const SingleBlog = ({ blog}) => {
                             <div className="row">{showRelatedBlog()}</div>
                         </div>
 
-                        {/* <div className="container pt-5 pb-5">{showComments()}</div> */}
+                        <div className="container pt-5 pb-5">{showComments()}</div>
                     </article>
                 </main>
             </LayoutBlog>
