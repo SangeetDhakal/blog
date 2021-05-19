@@ -124,6 +124,8 @@ const SingleBlog = ({ blog}) => {
         ));
     };
 
+
+
     const showComments = () => {
         return (
             <div>
@@ -204,7 +206,9 @@ const SingleBlog = ({ blog}) => {
                             {/* {JSON.stringify(related)} */}
                             <div className="row">{showRelatedBlog()}</div>
                         </div>
-
+                        {/* <div class="container text-center pb-5">
+                        <button class="btn btn-sm btn-danger" onClick="showComments()">Show comments</button>
+                        </div> */}
                         <div className="container pt-5 pb-5">{showComments()}</div>
                     </article>
                 </main>
