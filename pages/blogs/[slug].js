@@ -137,6 +137,7 @@ const SingleBlog = ({ blog}) => {
     // const myLoader=({src,width,quality})=>{
     //     return (`${API}/blog/photo/${blog.slug}`)
     //     }
+    
 
     return (
         <React.Fragment>
@@ -148,15 +149,18 @@ const SingleBlog = ({ blog}) => {
                         <div className="container-fluid ">
                             <section>
                                 <div className="col-md-11 mx-auto" style={{ marginTop: '0px' }}>
+                                    
                                     <Image
                                         // loader={myLoader}
                                         src={`${API}/blog/photo/${blog.slug}`}
                                         alt={blog.title}
                                         priority={true}
-                                        height={300}
-                                        width={400}
+                                        height={200}
+                                        width={300}
+                                        objectFit="cover"
                                         layout="responsive"
-                                        quality={50}
+                                        quality={70}
+                                        objectPosition="bottom center"
                                         
                                         
                                     />
@@ -167,6 +171,7 @@ const SingleBlog = ({ blog}) => {
                                 <div className="container">
                                     <h1 className="col-md-12 pb-3 pt-3">{blog.title}</h1>
                                     <p className="col-md-9 lead mt-3 mark">
+                                        
                                         Written by <Link href={`/profile/${blog.postedBy.username}`}><a>{blog.postedBy.username}</a></Link> | Published {moment(blog.updatedAt).fromNow()}
                                     </p>
 
@@ -202,14 +207,14 @@ const SingleBlog = ({ blog}) => {
 
                         </CookieConsent>
                         <div className="container">
-                            <h4 className="text-center pt-5 pb-5 h2">Related blogs</h4>
+                            <h4 className="text-center pt-5 pb-5">Related blogs</h4>
                             {/* {JSON.stringify(related)} */}
                             <div className="row">{showRelatedBlog()}</div>
                         </div>
                         {/* <div class="container text-center pb-5">
                         <button class="btn btn-sm btn-danger" onClick="showComments()">Show comments</button>
                         </div> */}
-                        <div className="container pt-5 pb-5">{showComments()}</div>
+                        {/* <div className="container pt-5 pb-5">{showComments()}</div> */}
                     </article>
                 </main>
             </LayoutBlog>

@@ -2,12 +2,41 @@
     height: 4px !important;
 }
  
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Lato:100,300,400,700,100italic,300italic);
+
+.row{
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color:#555555;
+}
+p{
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color:#555555;
+  margin: 0px 15px 25px;
+  
+}
+
+h1{
+  font-family: 'Lato',sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+h2,h3,h4,h5{
+  font-family: 'Lato',sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
 
 
 td {
   border: 1px solid #ddd;
   padding-left: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   
  
 }
@@ -129,6 +158,8 @@ padding-top: 2px;
   position: relative;
   display: inline;
   background: rgb(255,255,255);
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
   font-weight: 600;
   z-index: 15;
   padding: 6px 10px;
@@ -185,11 +216,17 @@ padding-top: 2px;
   background: #00c4f3;
   display: inline-block;
   padding: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .desc {
   position: relative;
   margin: 1em 0 0 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   padding: 1em;
   background: rgb(254,254,254);
   -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
@@ -316,4 +353,31 @@ padding-top: 2px;
     float: right;
     text-align: left;
   }
+}
+
+#toc_container {
+  background: #f9f9f9 none repeat scroll 0 0;
+  border: 1px solid #aaa;
+  display: table;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 1em;
+  padding: 20px 20px 20px 0;
+
+  width: auto;
+}
+
+.toc_title {
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#toc_container li{
+  list-style: outside none none !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
