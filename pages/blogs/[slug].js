@@ -170,10 +170,10 @@ const SingleBlog = ({ blog}) => {
                             <section>
                                 <div className="container">
                                     <h1 className="col-md-12 pb-3 pt-3">{blog.title}</h1>
-                                    <p className="col-md-9 lead mt-3 mark">
+                                    <div className="col-md-9 lead mt-3 mark">
                                         
-                                        Written by <Link href={`/profile/${blog.postedBy.username}`}><a>{blog.postedBy.username}</a></Link> | Published {moment(blog.updatedAt).fromNow()}
-                                    </p>
+                                        Written by <Link href={`/profile/${blog.postedBy.username}`}><a>{blog.postedBy.username}</a></Link> | Updated {moment(blog.updatedAt).fromNow()}
+                                    </div>
 
                                     <div className="pb-3">
                                         {showBlogCategories(blog)}
