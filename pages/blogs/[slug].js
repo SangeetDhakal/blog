@@ -148,7 +148,7 @@ const SingleBlog = ({ blog}) => {
                     <article>
                         <div className="container-fluid ">
                             <section>
-                                <div className="col-md-11 mx-auto" style={{ marginTop: '0px' }}>
+                                <div className="col-md-11 mx-auto" style={{ marginTop: '0px'}}>
                                     
                                     <Image
                                         // loader={myLoader}
@@ -170,7 +170,7 @@ const SingleBlog = ({ blog}) => {
                             <section>
                                 <div className="container">
                                     <h1 className="col-md-12 pb-3 pt-3">{blog.title}</h1>
-                                    <div className="col-md-9 lead mt-3 mark">
+                                    <div className="col-md-8">
                                         
                                         Written by <Link href={`/profile/${blog.postedBy.username}`}><a>{blog.postedBy.username}</a></Link> | Updated {moment(blog.updatedAt).fromNow()}
                                     </div>
@@ -186,9 +186,12 @@ const SingleBlog = ({ blog}) => {
                         </div>
 
                         <div className="container">
-                            <section>
-                                <div className="col-md-9 lead">{renderHTML(blog.body)}</div>
-                            </section>
+                        <div className="row">
+                            
+                                <div className="col-md-8"  >{renderHTML(blog.body)}</div>
+                                <div className="col-md-4"   style={{ backgroundColor:"#ddddd3"}}>Check</div>
+                           
+                        </div>
                         </div>
                         <CookieConsent
                             
