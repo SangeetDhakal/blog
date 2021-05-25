@@ -189,7 +189,7 @@ const SingleBlog = ({ blog}) => {
                         <div className="row">
                             
                                 <div className="col-md-8"  >{renderHTML(blog.body)}</div>
-                                <div className="col-md-4"   style={{ backgroundColor:"#ddddd3"}}>Check</div>
+                                <div className="col-md-4" ></div>
                            
                         </div>
                         </div>
