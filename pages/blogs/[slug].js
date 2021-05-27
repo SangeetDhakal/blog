@@ -146,7 +146,7 @@ const SingleBlog = ({ blog}) => {
             <LayoutBlog>
                 <main>
                     <article>
-                        <div className="container-fluid ">
+                        {/* <div className="container-fluid "> */}
                             {/* <section>
                                 <div className="col-md-11 mx-auto" style={{ marginTop: '0px'}}>
                                     
@@ -167,7 +167,7 @@ const SingleBlog = ({ blog}) => {
                                 </div>
                             </section> */}
 
-                            <section>
+                            {/* <section>
                                 <div className="container">
                                     <h1 className="col-md-12 pb-3 pt-3">{blog.title}</h1>
                                     <div className="col-md-8">
@@ -183,7 +183,7 @@ const SingleBlog = ({ blog}) => {
                                     </div>
                                 </div>
                             </section>
-                        </div>
+                        </div> */}
 
                         <div className="container">
                         <div className="row">
