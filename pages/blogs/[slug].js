@@ -146,8 +146,8 @@ const SingleBlog = ({ blog}) => {
             <LayoutBlog>
                 <main>
                     <article>
-                        {/* <div className="container-fluid "> */}
-                            {/* <section>
+                        <div className="container-fluid ">
+                            <section>
                                 <div className="col-md-11 mx-auto" style={{ marginTop: '0px'}}>
                                     
                                     <Image
@@ -165,9 +165,9 @@ const SingleBlog = ({ blog}) => {
                                         
                                     />
                                 </div>
-                            </section> */}
+                            </section>
 
-                            {/* <section>
+                            <section>
                                 <div className="container">
                                     <h1 className="col-md-12 pb-3 pt-3">{blog.title}</h1>
                                     <div className="col-md-8">
@@ -183,7 +183,7 @@ const SingleBlog = ({ blog}) => {
                                     </div>
                                 </div>
                             </section>
-                        </div> */}
+                        </div>
 
                         <div className="container">
                         <div className="row">
@@ -193,7 +193,7 @@ const SingleBlog = ({ blog}) => {
                            
                         </div>
                         </div>
-                        {/* <CookieConsent
+                        <CookieConsent
                             
                             location="bottom"
                             enableDeclineButton
@@ -208,7 +208,7 @@ const SingleBlog = ({ blog}) => {
                         >
                             We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content and targeted ads, to analyze our website traffic, and to understand where our visitors are coming from.{" "}
 
-                        </CookieConsent> */}
+                        </CookieConsent>
                         <div className="container">
                             <h4 className="text-center pt-5 pb-5">Related blogs</h4>
                             {/* {JSON.stringify(related)} */}
