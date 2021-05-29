@@ -48,17 +48,17 @@ class MyDocument extends Document {
           <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/Static/icons/safari-pinned-tab.svg' color='#5bbad5' />
           <link rel='shortcut icon' href='/favicon.ico' />
-          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Lato:100,300,400,700,100italic,300italic' />
+          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,700,100italic,300italic' />
 
           
           
           <meta charSet="UTF-8" />
           <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
 
-          <link
+          {/* <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-          />
+          /> */}
 
 
           <link rel="stylesheet" href="/Static/css/bar.module.css" />
